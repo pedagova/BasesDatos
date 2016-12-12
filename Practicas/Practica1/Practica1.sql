@@ -38,3 +38,12 @@ where (e1.employee_id is not null) and (e2.employee_id = e1.manager_id);
 select distinct e2.first_name, e1.first_name, e2.salary, e1.salary
 from employees e1, employees e2
 where (e1.employee_id is not null) and (e2.employee_id = e1.manager_id) and e2.salary < e1.salary;
+
+
+select empl.first_name, jefe.first_name, d1.department_name, d2.department_name
+from employees empl, employees jefe, departments d1, departments d2
+where jefe.employee_id = empl.manager_id and empl.department_id <> jefe.department_id and d1.department_id = empl.department_id and d2.department_id = jefe.department_id ;
+
+select *
+from employees
+where salary > 10000;
